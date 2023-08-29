@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:bank/screens/Auth/login_screen.dart';
 import 'package:bank/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -28,8 +27,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Slanted rectangle should come here'));
+    return const Scaffold(
+        body: Center(
+        child: Text('Slanted rectangle should come here')),
+    );
   }
 }
 
