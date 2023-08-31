@@ -1,3 +1,4 @@
+import 'package:bank/screens/Auth/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/my_button.dart';
@@ -56,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                  MyTextFilled(
                    controller: passwordController,
                    hintText: "Password",
-                   obscureText: false,
+                   obscureText: true,
                  ),
 
                  SizedBox(height: screenHeight*0.1),
@@ -65,6 +66,7 @@ class LoginScreen extends StatelessWidget {
                  MyButton(
                    label: 'Login',
                    onPressed: (){
+                     Navigator.pop(context);
                      Navigator.push (
                        context,
                        MaterialPageRoute (
@@ -74,13 +76,20 @@ class LoginScreen extends StatelessWidget {
                    },
                  ),
                  SizedBox(height: screenHeight*0.25),
-                 const Align(
-                   alignment: Alignment.bottomCenter,
-                     child: Text('Forgot Password?',
-                     style: TextStyle(
-                       fontFamily: 'OpenSans',
-                       color: Color(0xFFF5F5F5)
-                     ),)
+                 TextButton(
+                   child: const Text('Forgot Password?',
+                   style: TextStyle(
+                     fontFamily: 'OpenSans',
+                     color: Color(0xFFF5F5F5)
+                   ),),
+                   onPressed: () {
+                     Navigator.push (
+                       context,
+                       MaterialPageRoute (
+                         builder: (BuildContext context) => ForgotPassword(),
+                       ),
+                     );
+                   },
                  )
                ],
              ),

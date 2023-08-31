@@ -27,9 +27,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: Center(
-        child: Text('Slanted rectangle should come here')),
+        child: Image.asset('images/Loading.png')),
     );
   }
 }
