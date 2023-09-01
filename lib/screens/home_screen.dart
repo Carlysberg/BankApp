@@ -20,60 +20,66 @@ class HomeScreen extends StatelessWidget {
           ),
         centerTitle: true,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-                label: "Build",
-                icon: SlantedEdgeButton(
-                    slantHeight: 50,
-                    text: "e",
-                    onPressed: (){}
-                ),),
-            BottomNavigationBarItem(
-                label: "build",
-                icon: Icon(Icons.build)),
+      body: Column(
+        children: [
+          const BalanceCard(accountBalance: '10,000.00'),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: ListView(
+                children: [
+                  ListTile(
 
-      ]),
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: <Color>[
-                  Color(0xFF022E64),
-                  Color(0xFF004395),
-                  Color(0xFF00408F)
-                ])
-        ),
-        child: Column(
-          children: [
-            const BalanceCard(accountBalance: '10,000.00'),
-            Expanded(
-              child: Container(
-                color: Colors.white,
-                child: ListView(
-                  children: [
-                    SlantedEdgeButton(
-                      slantHeight: 50,
-                      text: 'Slanted Button',
-                      onPressed: () {
-                        // Handle button press
-                      },
+                  )
+                ],
+              ),
+              ),
+          ),
+          Container(
+            color: Color(0xFFFFbbFF),
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: SlantedEdgeButton(
+                      slantHeight: 72,
+                      icon: Icon(Icons.home,
+                      color: Color(0xFFE6B014),
+                      ),
+                      text: Text('data',
+                        style: TextStyle(
+                          color: Color(0xFFE6B014)
+                        )
+                      ),
+                      onPressed: (){
+
+                      }, 
                     ),
-                    SizedBox(height: 35),
-                    SlantedEdgeButton(
-                      slantHeight: 50,
-                      text: 'Slanted Button',
-                      onPressed: () {
-                        // Handle button press
-                      },
-                    ),
-                  ],
                 ),
-                ),
-            )
-          ],
-        ),
+                Expanded(
+                    child: MaterialButton(
+                      onPressed: (){},
+                      child: Container(
+                        height: 72,
+                        color: const Color(0xFFFFbbFF),
+                        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.home,
+                                  color: Color(0xFFE6B014),
+                                ),
+                                Text('data',
+                                    style: TextStyle(
+                                        color: Color(0xFFE6B014)
+                                    )
+                                ),
+                              ],
+                        ),
+                      ),
+                    )
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

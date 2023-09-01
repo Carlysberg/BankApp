@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 
 class SlantedEdgeButton extends StatelessWidget {
   final double slantHeight;
-  final String text;
+  final Widget text;
   final VoidCallback onPressed;
+  final Widget icon;
 
   SlantedEdgeButton({
     required this.slantHeight,
     required this.text,
     required this.onPressed,
+    required this.icon,
   });
 
   @override
@@ -21,12 +23,11 @@ class SlantedEdgeButton extends StatelessWidget {
         color: Colors.blue,
         child: MaterialButton(
           onPressed: onPressed,
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-            ),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              icon,
+              text
+            ],
           ),
         ),
       ),
