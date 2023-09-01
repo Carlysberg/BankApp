@@ -45,14 +45,14 @@ class BalanceCard extends StatelessWidget {
                             color: const Color(0xFFFFFFFF).withOpacity(0.8)
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: screenHeight*0.025),
                       Text('GHC $accountBalance',
                         style: const TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.w700,
                           color: Color(0xFFFFFFFF),
                         ),),
-                      const SizedBox(height: 4),
+                      SizedBox(height: screenHeight*0.025),
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('Checking Account',

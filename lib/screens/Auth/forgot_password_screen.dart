@@ -20,11 +20,24 @@ class ForgotPassword extends StatelessWidget {
         elevation: 0,
         backgroundColor: const Color(0xFF022E64),
         leading: TextButton(
-          child: Expanded(
-            child: Image.asset('images/backButton.png')
+          onPressed: () {  },
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Row(
+              children: const[
+                Icon(Icons.arrow_back_ios_new,
+                  color: Color(0xFFFFFFFF),
+                ),
+                Text('Back',
+                  style: TextStyle(
+                    color: Color(0xFFFFFFFF)
+                  ),
+                )
+              ],
+            ),
           ),
-            onPressed: () {Navigator.pop(context);}
         ),
+        leadingWidth: 100,
         actions: [
           Padding(
             padding: const EdgeInsets.all(16.0),

@@ -11,14 +11,39 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF022E64),
-        title: const Text('Good Morning',
-        style: TextStyle(
-          fontFamily: 'OpenSans',
-          fontSize: 20,
-          fontWeight: FontWeight.w600
-        )
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Image.asset('images/profileImg.png'),
+        ),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Good morning',
+                  style: TextStyle(
+                      color: const Color(0xFFFFFFFF).withOpacity(0.8),
+                      fontFamily: 'OpenSans',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600
+                  )
+              ),
+              const Text('Mr. John Jimoh',
+              style: TextStyle(
+                color: Color(0xFFFFFFFF),
+                fontFamily: 'OpenSans',
+                fontSize: 16,
+                fontWeight: FontWeight.w600
+              )
+                ),
+            ],
           ),
-        centerTitle: true,
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('images/bankLogo.png'),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -36,39 +61,45 @@ class HomeScreen extends StatelessWidget {
               ),
           ),
           Container(
-            color: Color(0xFFFFbbFF),
+            color: Color(0xFFFFFFFF),
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: SlantedEdgeButton(
                       slantHeight: 72,
-                      icon: Icon(Icons.home,
-                      color: Color(0xFFE6B014),
+                      buttonColor: Color(0xFF022E64),
+                      icon: Image.asset('images/homeIcon.png',
+                        color: Color(0xFFE6B014),
                       ),
-                      text: Text('data',
+                      text: const Text('Home',
                         style: TextStyle(
-                          color: Color(0xFFE6B014)
+                          color: Color(0xFFE6B014),
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'OpenSans',
+                            letterSpacing: 0.5
                         )
                       ),
                       onPressed: (){
 
-                      }, 
+                      },
                     ),
                 ),
                 Expanded(
                     child: MaterialButton(
                       onPressed: (){},
-                      child: Container(
+                      child: SizedBox(
                         height: 72,
-                        color: const Color(0xFFFFbbFF),
                         child: Column(mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(Icons.home,
-                                  color: Color(0xFFE6B014),
-                                ),
-                                Text('data',
+                                Image.asset('images/transacImg.png'),
+                                const Text('Transactions',
                                     style: TextStyle(
-                                        color: Color(0xFFE6B014)
+                                      color: Color(0xFF022E64),
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w400,
+                                      fontFamily: 'OpenSans',
+                                      letterSpacing: 0.5
                                     )
                                 ),
                               ],
