@@ -1,7 +1,8 @@
+import 'package:bank/screens/transaction_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/balance_card.dart';
-import '../widgets/slanted_edge_button.dart';
+import '../widgets/bottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -45,6 +46,26 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: MyBottomNavBar(
+        leftOnPressed: () {
+          Navigator.pop(context);
+          Navigator.push (
+            context,
+            MaterialPageRoute (
+              builder: (BuildContext context) => const HomeScreen(),
+            ),
+          );
+        },
+        rightOnPressed: () {
+          Navigator.pop(context);
+          Navigator.push (
+            context,
+            MaterialPageRoute (
+              builder: (BuildContext context) => const TransactionScreen(),
+            ),
+          );
+        },
+      ),
       body: Column(
         children: [
           const BalanceCard(accountBalance: '10,000.00'),
@@ -60,56 +81,6 @@ class HomeScreen extends StatelessWidget {
               ),
               ),
           ),
-          Container(
-            color: Color(0xFFFFFFFF),
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: SlantedEdgeButton(
-                      slantHeight: 72,
-                      buttonColor: Color(0xFF022E64),
-                      icon: Image.asset('images/homeIcon.png',
-                        color: Color(0xFFE6B014),
-                      ),
-                      text: const Text('Home',
-                        style: TextStyle(
-                          color: Color(0xFFE6B014),
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'OpenSans',
-                            letterSpacing: 0.5
-                        )
-                      ),
-                      onPressed: (){
-
-                      },
-                    ),
-                ),
-                Expanded(
-                    child: MaterialButton(
-                      onPressed: (){},
-                      child: SizedBox(
-                        height: 72,
-                        child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset('images/transacImg.png'),
-                                const Text('Transactions',
-                                    style: TextStyle(
-                                      color: Color(0xFF022E64),
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'OpenSans',
-                                      letterSpacing: 0.5
-                                    )
-                                ),
-                              ],
-                        ),
-                      ),
-                    )
-                )
-              ],
-            ),
-          )
         ],
       ),
     );
