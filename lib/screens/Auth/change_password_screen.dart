@@ -1,16 +1,17 @@
+import 'package:bank/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../widgets/my_button.dart';
 import '../../widgets/mytext_filled.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ChangePassword extends StatelessWidget {
 
   //textFilled controllers
 
   final newpassController = TextEditingController();
   final confirmpassController = TextEditingController();
+  final oldpassController = TextEditingController();
 
-  ForgotPassword({super.key});
+  ChangePassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class ForgotPassword extends StatelessWidget {
                 ),
                 Text('Back',
                   style: TextStyle(
-                    color: Color(0xFFFFFFFF)
+                      color: Color(0xFFFFFFFF)
                   ),
                 )
               ],
@@ -62,6 +63,14 @@ class ForgotPassword extends StatelessWidget {
               children: [
                 SizedBox(height: screenHeight*0.2),
 
+                MyTextFilled(
+                  controller: oldpassController,
+                  hintText: "Old Password",
+                  obscureText: false,
+                ),
+
+                SizedBox(height: screenHeight*0.025),
+
                 //new password
                 MyTextFilled(
                   controller: newpassController,
@@ -82,9 +91,17 @@ class ForgotPassword extends StatelessWidget {
 
                 //loginButton
                 MyButton(
-                  label: 'Reset Password',
+                  label: 'Change Password',
                   onPressed: (){
                     Navigator.pop(context);
+                    Navigator.pop(context);
+                    Navigator.pop(context);
+                    Navigator.push (
+                      context,
+                      MaterialPageRoute (
+                        builder: (BuildContext context) => const HomeScreen(),
+                      ),
+                    );
                   },
                 ),
                 SizedBox(height: screenHeight*0.25),

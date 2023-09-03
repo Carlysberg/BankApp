@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 
 class MyBottomNavBar extends StatelessWidget {
 
+  Color kActiveBarColor() => const Color(0xFF022E64);
+  Color kInactiveBarColor() => const Color(0xFFFFFFFF);
+  Color kActiveIconColor() => const Color(0xFFE6B014);
+  Color kInactiveIconColor() => const Color(0xFF022E64);
+
   final VoidCallback leftOnPressed;
   final VoidCallback rightOnPressed;
 
@@ -15,19 +20,22 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFFFFFFF),
+      color: kInactiveBarColor(),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          //------------------------------------
+          // button on the left
+          //------------------------------------
           Expanded(
             child: SlantedEdgeButton(
               slantHeight: 72,
-              buttonColor: const Color(0xFF022E64),
-              icon: Image.asset('images/homeIcon.png',
-                color: const Color(0xFFE6B014),
+              buttonColor: kActiveBarColor(),
+              icon: Image.asset('assets/images/homeIcon.png',
+                color: kActiveIconColor(),
               ),
-              text: const Text('Home',
+              text: Text('Home',
                   style: TextStyle(
-                      color: Color(0xFFE6B014),
+                      color: kActiveIconColor(),
                       fontSize: 11,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'OpenSans',
@@ -37,6 +45,9 @@ class MyBottomNavBar extends StatelessWidget {
               onPressed: leftOnPressed
             ),
           ),
+          //------------------------------------
+          // button on the right
+          //------------------------------------
           Expanded(
               child: MaterialButton(
                 onPressed: rightOnPressed,
@@ -44,10 +55,12 @@ class MyBottomNavBar extends StatelessWidget {
                   height: 72,
                   child: Column(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('images/transacImg.png'),
-                      const Text('Transactions',
+                      Image.asset('assets/images/transacImg.png',
+                      color: kInactiveIconColor(),
+                      ),
+                      Text('Transactions',
                           style: TextStyle(
-                              color: Color(0xFF022E64),
+                              color: kInactiveIconColor(),
                               fontSize: 11,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'OpenSans',

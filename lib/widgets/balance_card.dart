@@ -31,7 +31,7 @@ class BalanceCard extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.asset('images/Vector.png',
+                Image.asset('assets/images/Vector.png',
                     fit: BoxFit.cover),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
