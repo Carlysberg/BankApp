@@ -13,9 +13,9 @@ class GiftListTile extends StatelessWidget {
         //modal bottom sheet
         //------------------------------
         showModalBottomSheet(context: context, builder: (context)=>Container(
-          color: Color(0xFF757575),
+          color: const Color(0xFF757575),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(32),
@@ -23,8 +23,8 @@ class GiftListTile extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 16),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 16),
                   child: Text('Transaction Details',
                   style: TextStyle(
                     fontFamily: 'OpenSans',
@@ -34,7 +34,7 @@ class GiftListTile extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text('Balance Before Transaction',
                         style: TextStyle(
                             fontFamily: 'OpenSans',
@@ -54,7 +54,7 @@ class GiftListTile extends StatelessWidget {
                     ],
                   ),
                   trailing: Column(crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
+                    children: const [
                       Text('GHC 0.00',
                         style: TextStyle(
                             fontFamily: 'OpenSans',
@@ -76,7 +76,7 @@ class GiftListTile extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text('Transaction Date',
                         style: TextStyle(
                             fontFamily: 'OpenSans',
@@ -104,7 +104,7 @@ class GiftListTile extends StatelessWidget {
                     ],
                   ),
                   trailing: Column(crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
+                    children: const [
                       Text('Date',
                         style: TextStyle(
                             fontFamily: 'OpenSans',
@@ -149,21 +149,21 @@ class GiftListTile extends StatelessWidget {
             leading: Image.asset('assets/images/gift.png'),
             title: Row(
               children: [
-                Text('GHC 50.00',
+                const Text('GHC 50.00',
                   style: TextStyle(
                       fontFamily: 'OpenSans',
                       fontWeight: FontWeight.w700,
                       fontSize: 16
                   ),
                 ),
-                SizedBox(width: 7),
+                const SizedBox(width: 7),
                 Container(
                   decoration: BoxDecoration(
-                    color: Color(0xFF78C8E1).withOpacity(0.08),
+                    color: const Color(0xFF78C8E1).withOpacity(0.08),
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text('Debit',
                       style: TextStyle(
                           fontFamily: 'OpenSans',
@@ -177,7 +177,7 @@ class GiftListTile extends StatelessWidget {
               ],
             ),
             subtitle: Row(
-              children: [
+              children: const [
                 Text('#',
                   style: TextStyle(
                       fontFamily: 'OpenSans',
@@ -187,7 +187,7 @@ class GiftListTile extends StatelessWidget {
                   ),
                 ),
                 Text('Gift',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontFamily: 'OpenSans',
                       fontWeight: FontWeight.w400,
                       fontSize: 12,
@@ -196,7 +196,7 @@ class GiftListTile extends StatelessWidget {
                 ),
               ],
             ),
-            trailing: Text('date',
+            trailing: const Text('date',
               style: TextStyle(
                   fontFamily: 'OpenSans',
                   fontWeight: FontWeight.w400,

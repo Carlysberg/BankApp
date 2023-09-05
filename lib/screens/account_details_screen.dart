@@ -1,8 +1,13 @@
+import 'dart:convert';
+
 import 'package:bank/Consts/text_styles.dart';
 import 'package:bank/screens/Auth/change_password_screen.dart';
 import 'package:bank/screens/Auth/login_screen.dart';
 import 'package:bank/widgets/slanted_edge_clipper.dart';
 import 'package:flutter/material.dart';
+
+const String staticData = '{"customerID": "23399922","customerName": "John Jimoh","gender": "MALE","title": "Mr."}';
+
 
 class AccountDetailsScreen extends StatelessWidget {
   const AccountDetailsScreen({Key? key}) : super(key: key);
@@ -94,7 +99,7 @@ class AccountDetailsScreen extends StatelessWidget {
                                       color: Color(0xFF022E64).withOpacity(0.8)
                                   ),
                                 ),
-                                Text('MALE',
+                                Text(jsonDecode(staticData)['gender'],
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w400,
@@ -111,7 +116,7 @@ class AccountDetailsScreen extends StatelessWidget {
                                       color: Color(0xFF022E64).withOpacity(0.8)
                                   ),
                                 ),
-                                Text('23399922',
+                                Text(jsonDecode(staticData)['customerID'],
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w400,
@@ -151,7 +156,7 @@ class AccountDetailsScreen extends StatelessWidget {
                                       color: Color(0xFF022E64).withOpacity(0.8)
                                   ),
                                 ),
-                                Text('MR',
+                                Text(jsonDecode(staticData)['title'],
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w400,

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bank/screens/transaction_screen.dart';
 import 'package:bank/widgets/gift_tile.dart';
 import 'package:bank/widgets/inflow_tile.dart';
@@ -6,6 +8,8 @@ import 'package:flutter/material.dart';
 import '../widgets/balance_card.dart';
 import '../widgets/bottom_navbar.dart';
 import 'account_details_screen.dart';
+const String staticData = '{"customerID": "23399922","customerName": "John Jimoh","gender": "MALE","title": "Mr."}';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -40,8 +44,8 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600
                     )
                 ),
-                const Text('Mr. John Jimoh',
-                    style: TextStyle(
+                Text(jsonDecode(staticData)['title']+' '+jsonDecode(staticData)['customerName'],
+                    style: const TextStyle(
                         color: Color(0xFFFFFFFF),
                         fontFamily: 'OpenSans',
                         fontSize: 16,
@@ -74,7 +78,7 @@ class HomeScreen extends StatelessWidget {
           Navigator.push (
             context,
             MaterialPageRoute (
-              builder: (BuildContext context) => TransactionScreen(),
+              builder: (BuildContext context) => const TransactionScreen(),
             ),
           );
         },
@@ -86,11 +90,12 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               color: Colors.white,
               child: ListView(
-                children: [
+                children: const [
                   GiftListTile(),
                   InflowTile(),
                   GiftListTile(),
-                  InflowTile()
+                  InflowTile(),
+
                 ],
               ),
               ),
